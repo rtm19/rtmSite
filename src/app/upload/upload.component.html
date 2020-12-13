@@ -1,0 +1,58 @@
+
+<div class="row justify-content-center">  
+    <div class="col-10">
+        <label>Album name:</label>  
+        <select [(ngModel)]="selectedLevel" (change)="selected()">  
+        <option value="0">--Select--</option>  
+        <option *ngFor="let album of albumList"> {{album}} </option>  
+        </select>  
+    </div>
+    
+    <div class="col-2">
+        <input type="button" value="User Enquiry" (click)="userEnquiryClicked()" class="btn btn-primary py-2 px-4 text-white" >
+    </div>    
+</div>  
+
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            Firebase Cloud Storage for Large images
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Select a file for Upload</h5>
+            <input type="file" (change)="upload($event)" accept=".png,.jpg" /> 
+        </div>
+        <p *ngIf="uploadFileStatus === 'Success' || uploadFileStatus === 'Failed'">File upload {{uploadFileStatus}}</p>
+        <!-- <hr> -->
+        <div class="card-header">
+            Firebase Cloud Storage for Thumbnails
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Select a file for Upload</h5>
+            <input type="file" (change)="uploadThumbnail($event)" accept=".png,.jpg" /> 
+        </div>
+        <p *ngIf="uploadThumbnailStatus === 'Success' || uploadThumbnailStatus === 'Failed'">Thumbnail upload {{uploadThumbnailStatus}}</p>
+        <div class="row form-group">
+            <div class="col-md-12">
+              <input type="button" value="Upload Files" (click)="uploadClicked()" class="btn btn-primary py-2 px-4 text-white">
+            </div>
+        </div>
+        
+    </div>
+<br>
+    <div class="card">
+        <div class="card-header">
+            Firebase Cloud Storage for Home-page images
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Select a file for Upload</h5>
+            <input type="file" (change)="uploadHomeImages($event)" accept=".png,.jpg" /> 
+        </div>
+        <p *ngIf="uploadHomeImgStatus === 'Success' || uploadHomeImgStatus === 'Failed'">Home Image upload {{uploadHomeImgStatus}}</p>
+        <div class="row form-group">
+            <div class="col-md-12">
+              <input type="button" value="Upload File" (click)="uploadHomeImg()" class="btn btn-primary py-2 px-4 text-white">
+            </div>
+        </div>
+    </div>
+</div>

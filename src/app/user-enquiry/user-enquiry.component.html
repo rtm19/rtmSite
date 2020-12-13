@@ -1,0 +1,11 @@
+<p>user-enquiry works!</p>
+<ag-grid-angular
+    style="width: 1000px; height: 500px;"
+    class="ag-theme-balham"
+    [enableSorting]="true" 
+    [enableFilter]="true" 
+    [rowData]="rowData | async"
+    [columnDefs]="columnDefs"
+    (cellValueChanged)="onCellValueChanged($event)"
+    >
+</ag-grid-angular>

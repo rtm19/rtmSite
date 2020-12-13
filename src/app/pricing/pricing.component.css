@@ -1,0 +1,4 @@
+.selected-price {
+    transition: background 0.5s linear 0s;
+    background: #20c997;
+}
